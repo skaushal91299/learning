@@ -1,16 +1,15 @@
 // ignore_for_file: avoid_print, constant_identifier_names
 
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-
 import 'login_success.dart';
 
 class Resource {
-  final Status status;
   Resource({required this.status});
+
+  final Status status;
 }
 
 enum Status { Success, Error, Cancelled }
