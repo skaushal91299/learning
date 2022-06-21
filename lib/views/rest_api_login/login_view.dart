@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print
+// ignore_for_file: avoid_print, unused_field
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +20,6 @@ class _LoginViewState extends State<LoginView> {
   TextEditingController passwordController = TextEditingController();
 
   bool _isLoggedIn = false;
-  Map _userDetails = {};
 
   bool isValidEmail(email) {
     return RegExp(
@@ -210,7 +209,6 @@ class _LoginViewState extends State<LoginView> {
                           FacebookAuth.instance.getUserData().then((userData) {
                             setState(() {
                               _isLoggedIn = true;
-                              _userDetails = userData;
                             });
                           });
                         });

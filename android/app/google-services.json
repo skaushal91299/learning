@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "2384675712",
+    "project_id": "authentication-418dd",
+    "storage_bucket": "authentication-418dd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:2384675712:android:ec0de2dcbb0a9b6f63f765",
+        "android_client_info": {
+          "package_name": "sahil.selfmade.learning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "2384675712-qiiosvcm4b372lndkuq10c4mhgpoqhps.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCa-maCs6OFQoE1ZjW3SgJtN30evcsBtUY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "2384675712-qiiosvcm4b372lndkuq10c4mhgpoqhps.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
