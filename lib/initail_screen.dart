@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'views/bottom_navigation/bottom_navbar.dart';
 import 'views/google_signIn/google_signin.dart';
 import 'views/rest_api_login/login_view.dart';
 
@@ -27,6 +28,12 @@ class HomePage extends StatelessWidget {
                     Get.to(() => const GoogleAuthPage());
                   },
                   'Google Sign in',
+                ),
+                buttons(
+                  () {
+                    Get.offAll(() => const BottomNavBarView());
+                  },
+                  'Bottom Navigation Bar',
                 ),
               ],
             ),
