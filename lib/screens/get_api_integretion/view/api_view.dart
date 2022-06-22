@@ -45,6 +45,7 @@ class _APIIntegrationState extends State<APIIntegration> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
+                          // Text('${_userModel!}'),
                           // Text('${}'),
                         ],
                       ),
