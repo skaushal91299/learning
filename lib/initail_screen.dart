@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:learning/screens/get_api_integretion/view/api_view.dart';
 
-import 'screens/bottom_navigation/bottom_navbar copy.dart';
+import 'screens/bottom_navigation/bottom_navbar.dart';
 import 'screens/google_signIn/google_signin.dart';
 import 'screens/rest_api_login/login_view.dart';
 
@@ -34,6 +35,12 @@ class HomePage extends StatelessWidget {
                     Get.offAll(() => const BottomNavBarView());
                   },
                   'Bottom Navigation Bar',
+                ),
+                buttons(
+                  () {
+                    Get.offAll(() => const APIIntegration());
+                  },
+                  'API Integretion',
                 ),
               ],
             ),
