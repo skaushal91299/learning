@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'views/bottom_navigation/bottom_navbar.dart';
-import 'views/google_signIn/google_signin.dart';
-import 'views/rest_api_login/login_view.dart';
+import 'screens/bottom_navigation/bottom_navbar copy.dart';
+import 'screens/google_signIn/google_signin.dart';
+import 'screens/rest_api_login/login_view.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);

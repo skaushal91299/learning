@@ -2,8 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:learning/views/google_signIn/google_home.dart';
-import 'views/bottom_navigation/bottom_navbar.dart';
+import 'initail_screen.dart';
+import 'screens/google_signIn/google_home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,9 +20,7 @@ class MyApp extends StatelessWidget {
     User? result = FirebaseAuth.instance.currentUser;
 
     return GetMaterialApp(
-      home: result == null
-          ? const BottomNavBarView()
-          : const GoogleLoginSuccess(),
+      home: result == null ? const HomePage() : const GoogleLoginSuccess(),
     );
   }
 }

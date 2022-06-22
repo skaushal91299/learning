@@ -1,5 +1,6 @@
+import 'dart:collection';
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 import 'first.dart';
 import 'fourth.dart';
 import 'second.dart';
@@ -13,24 +14,17 @@ class BottomNavBarView extends StatefulWidget {
 }
 
 class _BottomNavBarViewState extends State<BottomNavBarView> {
-  final PageStorageBucket bucket = PageStorageBucket();
   final List<Widget> screens = const [
-    FirstScrren(
-      key: PageStorageKey('First Screen'),
-    ),
-    SecondScrren(
-      key: PageStorageKey('Second Screen'),
-    ),
-    ThirdScrren(
-      key: PageStorageKey('Third Screen'),
-    ),
-    FourthScrren(
-      key: PageStorageKey('Fourth Screen'),
-    ),
+    FirstScrren(),
+    SecondScrren(),
+    ThirdScrren(),
+    FourthScrren(),
   ];
 
   int _currentTab = 0;
+  final ListQueue<int> _navigationQueue = ListQueue();
 
+  // EXIT POPUP
   Future<bool> showExitPopup() async {
     return await showDialog(
           //show confirm dialogue
@@ -41,12 +35,12 @@ class _BottomNavBarViewState extends State<BottomNavBarView> {
             content: const Text('Do you want to exit an App?'),
             actions: [
               ElevatedButton(
-                onPressed: () => Navigator.of(context).pop(false),
+                onPressed: () => Get.back(canPop: false),
                 //return false when click on "NO"
                 child: const Text('No'),
               ),
               ElevatedButton(
-                onPressed: () => Navigator.of(context).pop(true),
+                onPressed: () => Get.back(canPop: true),
                 //return true when click on "Yes"
                 child: const Text('Yes'),
               ),
@@ -56,33 +50,46 @@ class _BottomNavBarViewState extends State<BottomNavBarView> {
         false; //if showDialouge had returned null, then return false
   }
 
-  void _onSelectedIndex(int index) {
-    setState(() {
-      _currentTab = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: showExitPopup,
+      onWillPop: () async {
+        if (_navigationQueue.isEmpty) {
+          // If NavigationQueue is Empty show EXIT popup
+          return showExitPopup();
+        }
+        setState(() {
+          _navigationQueue.removeLast();
+          int position = _navigationQueue.isEmpty ? 0 : _navigationQueue.last;
+          _currentTab = position;
+        });
+        return false;
+      },
       child: Scaffold(
           appBar: AppBar(
             title: const Text('Bottom Navigaton Bar UI'),
             centerTitle: true,
           ),
           body: Center(
-            child: PageStorage(
-              bucket: bucket,
-              child: screens[_currentTab],
-            ),
+            child: screens[_currentTab],
           ),
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: _currentTab,
-            onTap: _onSelectedIndex,
+            onTap: (index) {
+              // Remove Repeated Element from the Queue
+              if (index != _currentTab) {
+                _navigationQueue.removeWhere((element) => element == index);
+                _navigationQueue.addLast(index);
+                setState(() {
+                  _currentTab = index;
+                });
+              }
+            },
             unselectedItemColor: Colors.purple[600],
             showUnselectedLabels: true,
             selectedItemColor: Colors.red,
+            elevation: 6.0,
+            enableFeedback: true,
             items: const [
               BottomNavigationBarItem(
                 icon: Icon(Icons.home),
