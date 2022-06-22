@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: avoid_print
+
 import 'package:http/http.dart' as http;
 import '../Model/model_class.dart';
 
@@ -17,5 +18,6 @@ class ApiService {
     } catch (e) {
       print(e.toString());
     }
+    return null;
   }
 }

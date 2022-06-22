@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 
 import '../Model/model_class.dart';
@@ -42,14 +44,14 @@ class _APIIntegrationState extends State<APIIntegration> {
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [],
+                        children: const [],
                       ),
                       const SizedBox(
                         height: 20.0,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [],
+                        children: const [],
                       ),
                     ],
                   ),

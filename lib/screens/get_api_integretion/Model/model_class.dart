@@ -2,6 +2,8 @@
 //
 //     final userModel = userModelFromJson(jsonString);
 
+// ignore_for_file: constant_identifier_names
+
 import 'dart:convert';
 
 UserModel userModelFromJson(String str) => UserModel.fromJson(json.decode(str));
@@ -91,9 +93,7 @@ class EnumValues<T> {
   EnumValues(this.map);
 
   Map<T, String> get reverse {
-    if (reverseMap == null) {
-      reverseMap = map!.map((k, v) => MapEntry(v, k));
-    }
+    reverseMap ??= map!.map((k, v) => MapEntry(v, k));
     return reverseMap!;
   }
 }

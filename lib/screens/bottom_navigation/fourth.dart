@@ -6,7 +6,6 @@ class FourthScrren extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Colors.red,
-        child: Container(child: Center(child: const Text('SCREEN 4'))));
+        color: Colors.red, child: const Center(child: Text('SCREEN 4')));
   }
 }

@@ -6,6 +6,7 @@ class FirstScrren extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Colors.amberAccent, child: Center(child: Text('SCREEN 1')));
+        color: Colors.amberAccent,
+        child: const Center(child: Text('SCREEN 1')));
   }
 }

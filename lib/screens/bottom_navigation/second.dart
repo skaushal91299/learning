@@ -6,8 +6,8 @@ class SecondScrren extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Center(child: const Text('SCREEN 2')),
       color: Colors.green,
+      child: const Center(child: Text('SCREEN 2')),
     );
   }
 }

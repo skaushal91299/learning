@@ -7,7 +7,7 @@ class ThirdScrren extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.grey,
-      child: Center(child: const Text('SCREEN 3')),
+      child: const Center(child: Text('SCREEN 3')),
     );
   }
 }
