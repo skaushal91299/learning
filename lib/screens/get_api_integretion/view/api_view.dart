@@ -22,7 +22,7 @@ class _APIIntegrationState extends State<APIIntegration> {
   }
 
   void _getData() async {
-    _userModel = (await ApiService().getUsers())!;
+    await ApiService().getUsers();
     Future.delayed(const Duration(seconds: 1)).then((value) => setState(() {}));
   }
 
@@ -44,7 +44,9 @@ class _APIIntegrationState extends State<APIIntegration> {
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: const [],
+                        children: [
+                          // Text('${}'),
+                        ],
                       ),
                       const SizedBox(
                         height: 20.0,

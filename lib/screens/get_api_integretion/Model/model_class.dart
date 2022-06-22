@@ -21,8 +21,8 @@ class UserModel {
 
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
         count: json["count"],
-        entries:
-            List<Entry>.from(json["entries"].map((x) => Entry.fromJson(x))),
+        entries: List<Entry>.from(json["entries"].map((x) => Entry.fromJson(x)))
+            .toList(),
       );
 
   Map<String, dynamic> toJson() => {
