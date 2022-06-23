@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:learning/screens/get_api_integretion/view/api_view.dart';
+import 'package:learning/screens/json_ser_dser/json_ser_des.dart';
+import 'package:learning/screens/test_api/view/api_view.dart';
 
 import 'screens/bottom_navigation/bottom_navbar.dart';
 import 'screens/google_signIn/google_signin.dart';
+import 'screens/random_user_api/view/api_view.dart';
 import 'screens/rest_api_login/login_view.dart';
 
 class HomePage extends StatelessWidget {
@@ -38,9 +40,21 @@ class HomePage extends StatelessWidget {
                 ),
                 buttons(
                   () {
-                    Get.offAll(() => const APIIntegration());
+                    Get.offAll(() => const ApiView());
                   },
                   'API Integretion',
+                ),
+                buttons(
+                  () {
+                    Get.offAll(() => const ApiProfileView());
+                  },
+                  'Random User',
+                ),
+                buttons(
+                  () {
+                    Get.offAll(() => JSONDeSer());
+                  },
+                  'JSON SERIAL DESE',
                 ),
               ],
             ),
