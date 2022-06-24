@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:learning/screens/json_ser_dser/json_ser_des.dart';
+import 'package:learning/screens/list_view_task/main_view.dart';
 import 'package:learning/screens/shared_pref/shared_pref_view.dart';
 import 'package:learning/screens/shared_pref/splash_screen.dart';
 import 'package:learning/screens/tab_bar/main_view.dart';
@@ -67,9 +68,15 @@ class HomePage extends StatelessWidget {
                 ),
                 buttons(
                   () {
-                    Get.offAll(() => TABBarView());
+                    Get.offAll(() => const TABBarView());
                   },
                   'Tab Bar',
+                ),
+                buttons(
+                  () {
+                    Get.offAll(() => const ListViewTask());
+                  },
+                  'ListView Builder with CheckBox',
                 ),
               ],
             ),
