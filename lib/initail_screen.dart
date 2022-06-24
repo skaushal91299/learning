@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:learning/screens/json_ser_dser/json_ser_des.dart';
+import 'package:learning/screens/shared_pref/shared_pref_view.dart';
+import 'package:learning/screens/shared_pref/splash_screen.dart';
+import 'package:learning/screens/tab_bar/main_view.dart';
 import 'package:learning/screens/test_api/view/api_view.dart';
 
 import 'screens/bottom_navigation/bottom_navbar.dart';
@@ -55,6 +58,18 @@ class HomePage extends StatelessWidget {
                     Get.offAll(() => JSONDeSer());
                   },
                   'JSON SERIAL DESE',
+                ),
+                buttons(
+                  () {
+                    Get.offAll(() => SplashScreen());
+                  },
+                  'Shared Pref',
+                ),
+                buttons(
+                  () {
+                    Get.offAll(() => TABBarView());
+                  },
+                  'Tab Bar',
                 ),
               ],
             ),

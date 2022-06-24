@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'initail_screen.dart';
 import 'screens/google_signIn/google_home.dart';
+import 'screens/shared_pref/shared_pref_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
