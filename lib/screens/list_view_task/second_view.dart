@@ -2,7 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 
 class SecondListViewTask extends StatefulWidget {
-  const SecondListViewTask({Key? key}) : super(key: key);
+  final List checkedItems;
+  SecondListViewTask({
+    Key? key,
+    required this.checkedItems,
+  }) : super(
+          key: key,
+        );
 
   @override
   State<SecondListViewTask> createState() => _SecondListViewTaskState();
@@ -36,9 +42,9 @@ class _SecondListViewTaskState extends State<SecondListViewTask> {
                         Align(
                           alignment: Alignment.bottomRight,
                           child: Checkbox(
-                              // value: _checks[i],
-                              // onChanged: () {},
-                              ),
+                            value: widget.checkedItems[i],
+                            onChanged: (val) {},
+                          ),
                         ),
                       ],
                     );
