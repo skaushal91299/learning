@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:learning/screens/list_view_task/second_view.dart';
 
 class ListViewTask extends StatefulWidget {
@@ -13,7 +12,7 @@ class ListViewTask extends StatefulWidget {
 class _ListViewTaskState extends State<ListViewTask> {
   static const int _count = 10;
   final List<bool> _checks = List.generate(_count, (_) => false);
-  late List checkedItems = [];
+  late List<dynamic> checkedItems = [];
 
   @override
   Widget build(BuildContext context) {
@@ -55,8 +54,14 @@ class _ListViewTaskState extends State<ListViewTask> {
                               value: _checks[i],
                               onChanged: (val) {
                                 setState(() {
+                                  if (checkedItems.contains(i)) {
+                                    checkedItems.remove(i);
+                                  } else {
+                                    checkedItems.add(i);
+                                  }
                                   _checks[i] = val!;
-                                  checkedItems == _checks[i];
+                                  // checkedItems = _checks;
+                                  print(checkedItems);
                                 });
                                 // _checks[i] == checkedItems;
                                 print(checkedItems);

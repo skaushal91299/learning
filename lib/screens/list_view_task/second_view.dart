@@ -1,8 +1,9 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
-import 'package:get_storage/get_storage.dart';
+import 'package:get/get.dart';
 
 class SecondListViewTask extends StatefulWidget {
-  final List checkedItems;
   SecondListViewTask({
     Key? key,
     required this.checkedItems,
@@ -10,12 +11,23 @@ class SecondListViewTask extends StatefulWidget {
           key: key,
         );
 
+  List<dynamic> checkedItems;
+
   @override
   State<SecondListViewTask> createState() => _SecondListViewTaskState();
 }
 
 class _SecondListViewTaskState extends State<SecondListViewTask> {
-  static const int _count = 10;
+  final _count = 10;
+  // List<dynamic>? checkedItemsCheck=List.generate(1, (index) {
+  //   if(widget.checkedItems==null){}
+  // });
+  @override
+  void initState() {
+    // TODO: implement initState
+    print(widget.checkedItems);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,12 +49,20 @@ class _SecondListViewTaskState extends State<SecondListViewTask> {
                     return Stack(
                       children: [
                         Container(
-                          color: Colors.red,
+                          color: Colors.amberAccent,
+                          height: Get.height,
+                          width: Get.width,
+                          alignment: Alignment.center,
+                          child: Text(
+                            'Box $i',
+                            style: const TextStyle(
+                                color: Colors.black, fontSize: 18),
+                          ),
                         ),
                         Align(
                           alignment: Alignment.bottomRight,
                           child: Checkbox(
-                            value: widget.checkedItems[i],
+                            value: widget.checkedItems.contains(i),
                             onChanged: (val) {},
                           ),
                         ),
