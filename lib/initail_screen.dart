@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import '/views/json_ser_dser/json_ser_des.dart';
+import '/views/list_view_task/main_view.dart';
+import '/views/shared_pref/splash_screen.dart';
+import '/views/tab_bar/main_view.dart';
+import '/views/test_api/view/api_view.dart';
+import 'views/bottom_navigation/bottom_navbar.dart';
 import 'views/google_signIn/google_signin.dart';
+import 'views/random_user_api/view/api_view.dart';
 import 'views/rest_api_login/login_view.dart';
 
 class HomePage extends StatelessWidget {
@@ -27,6 +33,48 @@ class HomePage extends StatelessWidget {
                     Get.to(() => const GoogleAuthPage());
                   },
                   'Google Sign in',
+                ),
+                buttons(
+                  () {
+                    Get.offAll(() => const BottomNavBarView());
+                  },
+                  'Bottom Navigation Bar',
+                ),
+                buttons(
+                  () {
+                    Get.offAll(() => const ApiView());
+                  },
+                  'API Integretion',
+                ),
+                buttons(
+                  () {
+                    Get.offAll(() => const ApiProfileView());
+                  },
+                  'Random User',
+                ),
+                buttons(
+                  () {
+                    Get.offAll(() => const JSONDeSer());
+                  },
+                  'JSON SERIAL DESE',
+                ),
+                buttons(
+                  () {
+                    Get.offAll(() => const SplashScreen());
+                  },
+                  'Shared Pref',
+                ),
+                buttons(
+                  () {
+                    Get.offAll(() => const TABBarView());
+                  },
+                  'Tab Bar',
+                ),
+                buttons(
+                  () {
+                    Get.offAll(() => const ListViewTask());
+                  },
+                  'ListView Builder with CheckBox',
                 ),
               ],
             ),

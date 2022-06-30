@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:learning/initail_screen.dart';
-import 'package:learning/views/google_signIn/function.dart';
+import '../../initail_screen.dart';
+import 'function.dart';
 
 class GoogleLoginSuccess extends StatelessWidget {
   const GoogleLoginSuccess({Key? key}) : super(key: key);

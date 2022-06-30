@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:learning/views/google_signIn/function.dart';
 
+import 'function.dart';
 import 'google_home.dart';
 
 class GoogleAuthPage extends StatefulWidget {
