@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:learning/screens/shared_pref/shared_pref_view.dart';
+import 'shared_pref_view.dart';
 
 String? finalEmail;
 
 class SplashScreen extends StatefulWidget {
-  SplashScreen({
+  const SplashScreen({
     Key? key,
   }) : super(key: key);
 
@@ -21,11 +21,12 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
+    // ignore: todo
     // TODO: implement initState
 
     getValidationData().whenComplete(() async {
       Timer(
-        Duration(
+        const Duration(
           seconds: 2,
         ),
         () => Get.off(
@@ -51,7 +52,7 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: const [
             CircularProgressIndicator(),
             Text('Loading'),
           ],

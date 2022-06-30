@@ -2,7 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:learning/screens/test_api/Model/enteries/enteries.dart';
+import '../Model/enteries/enteries.dart';
+import '/views/test_api/Model/enteries/enteries.dart';
 
 class ApiView extends StatefulWidget {
   const ApiView({Key? key}) : super(key: key);
@@ -61,9 +62,7 @@ class _ApiViewState extends State<ApiView> {
                         );
                       },
                     )
-                  : Container(
-                      child: Text('Error'),
-                    );
+                  : const Text('Error');
             }
           },
         ),

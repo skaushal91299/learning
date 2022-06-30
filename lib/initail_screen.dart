@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:learning/screens/json_ser_dser/json_ser_des.dart';
-import 'package:learning/screens/list_view_task/main_view.dart';
-import 'package:learning/screens/shared_pref/shared_pref_view.dart';
-import 'package:learning/screens/shared_pref/splash_screen.dart';
-import 'package:learning/screens/tab_bar/main_view.dart';
-import 'package:learning/screens/test_api/view/api_view.dart';
-
-import 'screens/bottom_navigation/bottom_navbar.dart';
-import 'screens/google_signIn/google_signin.dart';
-import 'screens/random_user_api/view/api_view.dart';
-import 'screens/rest_api_login/login_view.dart';
+import '/views/json_ser_dser/json_ser_des.dart';
+import '/views/list_view_task/main_view.dart';
+import '/views/shared_pref/splash_screen.dart';
+import '/views/tab_bar/main_view.dart';
+import '/views/test_api/view/api_view.dart';
+import 'views/bottom_navigation/bottom_navbar.dart';
+import 'views/google_signIn/google_signin.dart';
+import 'views/random_user_api/view/api_view.dart';
+import 'views/rest_api_login/login_view.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -56,13 +54,13 @@ class HomePage extends StatelessWidget {
                 ),
                 buttons(
                   () {
-                    Get.offAll(() => JSONDeSer());
+                    Get.offAll(() => const JSONDeSer());
                   },
                   'JSON SERIAL DESE',
                 ),
                 buttons(
                   () {
-                    Get.offAll(() => SplashScreen());
+                    Get.offAll(() => const SplashScreen());
                   },
                   'Shared Pref',
                 ),

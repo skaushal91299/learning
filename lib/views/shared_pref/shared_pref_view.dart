@@ -1,9 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:learning/screens/shared_pref/splash_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../initail_screen.dart';
+import 'splash_screen.dart';
+
+class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('Hello $finalEmail'),
+              ElevatedButton(
+                onPressed: () async {
+                  SharedPreferences pref =
+                      await SharedPreferences.getInstance();
+                  pref.remove('email');
+                  Get.off(() => const SharedPrefTut());
+                },
+                child: const Text('Logout'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Get.off(() => const HomePage());
+                },
+                child: const Text('HOME'),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
 
 class SharedPrefTut extends StatefulWidget {
   const SharedPrefTut({Key? key}) : super(key: key);
@@ -73,41 +108,6 @@ class _SharedPrefTutState extends State<SharedPrefTut> {
               child: const Text('LOGIN'),
             )
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('Hello $finalEmail'),
-              ElevatedButton(
-                onPressed: () async {
-                  SharedPreferences pref =
-                      await SharedPreferences.getInstance();
-                  pref.remove('email');
-                  Get.off(() => const SharedPrefTut());
-                },
-                child: Text('Logout'),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  Get.off(() => const HomePage());
-                },
-                child: Text('HOME'),
-              )
-            ],
-          ),
         ),
       ),
     );

@@ -1,6 +1,9 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:learning/screens/list_view_task/second_view.dart';
+
+import 'second_view.dart';
 
 class ListViewTask extends StatefulWidget {
   const ListViewTask({Key? key}) : super(key: key);

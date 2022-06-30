@@ -16,6 +16,7 @@ class _ApiProfileViewState extends State<ApiProfileView> {
     var data = jsonDecode(response.body);
 
     if (response.statusCode == 200) {
+      // ignore: avoid_print
       print(data);
       return RandomUser.fromMap(data);
     } else {

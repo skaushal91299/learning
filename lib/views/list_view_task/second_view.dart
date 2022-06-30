@@ -1,4 +1,4 @@
-// ignore_for_file: must_be_immutable
+// ignore_for_file: must_be_immutable, avoid_print
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -24,6 +24,7 @@ class _SecondListViewTaskState extends State<SecondListViewTask> {
   // });
   @override
   void initState() {
+    // ignore: todo
     // TODO: implement initState
     print(widget.checkedItems);
     super.initState();

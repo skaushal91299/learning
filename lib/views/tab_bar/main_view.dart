@@ -1,8 +1,7 @@
-import 'dart:collection';
+// ignore_for_file: avoid_print, must_call_super
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
 
 class TABBarView extends StatefulWidget {
   const TABBarView({Key? key}) : super(key: key);
@@ -27,7 +26,6 @@ class _TABBarViewState extends State<TABBarView>
     ),
   ].toList();
 
-  int _cuurentTab = 0;
   // final ListQueue<int> _navigationQueue = ListQueue();
   late TabController _tabController;
 
@@ -39,6 +37,7 @@ class _TABBarViewState extends State<TABBarView>
 
   @override
   void initState() {
+    // ignore: todo
     // TODO: implement initState
     _tabController = TabController(
       length: tabs.length,
@@ -54,6 +53,7 @@ class _TABBarViewState extends State<TABBarView>
   }
 
   @override
+  // ignore: todo
   // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
 
@@ -63,7 +63,7 @@ class _TABBarViewState extends State<TABBarView>
       await SystemNavigator.pop();
     }
 
-    Future.delayed(Duration(milliseconds: 200), () {
+    Future.delayed(const Duration(milliseconds: 200), () {
       print("set index");
       _tabController.index = 0;
     });

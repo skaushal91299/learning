@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -5,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'usermodel.dart';
 
 class JSONDeSer extends StatefulWidget {
-  JSONDeSer({Key? key}) : super(key: key);
+  const JSONDeSer({Key? key}) : super(key: key);
 
   @override
   State<JSONDeSer> createState() => _JSONDeSerState();
@@ -37,17 +39,16 @@ class _JSONDeSerState extends State<JSONDeSer> {
                 var json = jsonEncode(userMap);
                 print(json.toString());
               },
-              child: Text('Serialize'),
+              child: const Text('Serialize'),
             ),
             const SizedBox(width: 20),
             ElevatedButton(
               onPressed: () {
                 var decoded = jsonDecode(userJson);
                 Map<String, dynamic> userMap = decoded;
-                UserModelTest newUser = UserModelTest.fromMap(userMap);
                 print(userMap.toString());
               },
-              child: Text('De-Serialize'),
+              child: const Text('De-Serialize'),
             )
           ],
         ),
