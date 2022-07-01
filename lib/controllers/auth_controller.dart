@@ -59,6 +59,47 @@ class AuthController extends GetxController {
       print(e.toString());
     }
   }
+
+// Sign In User
+  Future<dynamic> signIn(
+      String email, String password, String deviceType) async {
+    try {
+      var url = Uri.parse(AppConstants.BASE_URL + AppConstants.LOGIN);
+      var response = await http.post(
+        url,
+        body: {
+          'email': email,
+          'password': password,
+          'deviceType': deviceType,
+          'deviceToken': 'jkgjskjgsjg',
+        },
+      );
+      var data = jsonDecode(response.body.toString());
+      if (response.statusCode == 200) {
+        print(' Data $data');
+        if (data["success"] != 0) {
+          snackBar('Login successfully');
+          return Get.to(() => const LoginSuccess());
+        } else {
+          print('success');
+          print(data['message']);
+        }
+      } else {
+        Get.snackbar(
+          'Error',
+          "Internal server error",
+          snackPosition: SnackPosition.BOTTOM,
+          colorText: Colors.white,
+          icon: const Icon(Icons.dangerous),
+          backgroundColor: const Color.fromARGB(255, 242, 74, 63),
+        );
+        print('success');
+        print(data['success']);
+      }
+    } catch (e) {
+      print(e.toString());
+    }
+  }
 }
 
 snackBar(

@@ -86,7 +86,7 @@ class HomePage extends StatelessWidget {
                 ),
                 buttons(
                   () {
-                    Get.offAll(() => const LoginViewSiginGetX());
+                    Get.offAll(() => const LoginViewGetX());
                   },
                   'Login using GetX',
                 ),
