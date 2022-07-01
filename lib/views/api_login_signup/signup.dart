@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/utils.dart';
 import 'package:learning/controllers/auth_controller.dart';
 
 AuthController authController = Get.put(AuthController());
