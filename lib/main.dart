@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
     User? result = FirebaseAuth.instance.currentUser;
 
     return GetMaterialApp(
+      theme: ThemeData(primarySwatch: Colors.red),
       home: result == null ? const HomePage() : const GoogleLoginSuccess(),
     );
   }

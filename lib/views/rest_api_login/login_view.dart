@@ -24,7 +24,7 @@ class _LoginViewState extends State<LoginView> {
   bool isValidEmail(email) {
     return RegExp(
             r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-        .hasMatch(email);
+          .hasMatch(email);
   }
 
   //

@@ -7,12 +7,12 @@ import 'package:http/http.dart' as http;
 import 'login_success.dart';
 
 class Resource {
-  Resource({required this.status});
+  // Resource({required this.status});
 
-  final Status status;
+//   final Status status;
 }
-
-enum Status { Success, Error, Cancelled }
+//
+// enum Status { Success, Error, Cancelled }
 
 login(
   String email,

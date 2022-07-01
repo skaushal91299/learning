@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:learning/views/api_login_signup/signup.dart';
 import '/views/json_ser_dser/json_ser_des.dart';
 import '/views/list_view_task/main_view.dart';
 import '/views/shared_pref/splash_screen.dart';
 import '/views/tab_bar/main_view.dart';
 import '/views/test_api/view/api_view.dart';
+import 'views/api_login_signup/login.dart';
 import 'views/bottom_navigation/bottom_navbar.dart';
 import 'views/google_signIn/google_signin.dart';
 import 'views/random_user_api/view/api_view.dart';
@@ -75,6 +77,18 @@ class HomePage extends StatelessWidget {
                     Get.offAll(() => const ListViewTask());
                   },
                   'ListView Builder with CheckBox',
+                ),
+                buttons(
+                  () {
+                    Get.offAll(() => const LoginGetX());
+                  },
+                  'Register using GetX',
+                ),
+                buttons(
+                  () {
+                    Get.offAll(() => const LoginViewSiginGetX());
+                  },
+                  'Login using GetX',
                 ),
               ],
             ),
